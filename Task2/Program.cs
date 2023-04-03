@@ -21,7 +21,7 @@ namespace Task2
             {
                 try
                 {
-                    DS = dir.DirSize();
+                    DS = dir.DirSize(dir.DirPath);
                     Console.WriteLine("Размер директори {0} - {1}", dir.DirPath, DS);
                 }
                 catch (Exception e)
