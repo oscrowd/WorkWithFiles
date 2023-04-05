@@ -17,6 +17,7 @@ namespace Serialization
         public string Group { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Student(string name, string group, DateTime DoB)
+        //public Student(string name, string group)
         {
             Name = name;
             Group = group;
@@ -27,15 +28,15 @@ namespace Serialization
     {
         static void Main(string[] args)
         {
-            //const string SettingsFileName = "D:\\test1\\Students.dat";
-            // Пишем
-            //BinaryData binaryData = new BinaryData();
+            const string SettingsFileName = "D:\\test1\\Students.dat";
+            BinaryData binaryData = new BinaryData();
             //binaryData.WriteValues(SettingsFileName);
             //binaryData.ReadValues(SettingsFileName);
-            // сохраняем путь к файлу (допустим, вы его скачали на рабочий стол)
+             
+
             string filePath = "D:\\test1\\Students.dat";
             BinaryFormatter formatter = new BinaryFormatter();
-            using (var fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (var fs = new FileStream(filePath, FileMode.Open))
             {
                 var newStudent = (Student)formatter.Deserialize(fs);
                 Console.WriteLine("Объект десериализован");
@@ -43,8 +44,8 @@ namespace Serialization
             }
             Console.ReadLine();
 
+            
+            Console.ReadLine();
         }
-
-        
     }
 }
