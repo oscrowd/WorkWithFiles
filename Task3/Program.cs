@@ -15,6 +15,8 @@ namespace Task3
             long DelSize = 0;
             Boolean DirEx = false;
             Dir dir = new Dir();
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
+
             Console.WriteLine("Введите путь к директори:");
             dir.DirPath = Console.ReadLine();
             DirEx = dir.DirExist();
